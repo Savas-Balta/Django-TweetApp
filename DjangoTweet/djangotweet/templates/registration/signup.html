@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="border:4px solid cornflowerblue ; padding: 8px; width: 70%;">
+  <h2>Log In</h2>
+  <form method="post">
+    {% csrf_token %}
+    {%for field in form%}
+    <div class="form-control">
+      {{field.label_tag}}
+      {{field}}
+    </div>
+    {%endfor%}
+
+    <button type="submit" value="signup">Sign Up</button>
+    <!-- buradaki value bizim herşeyimizi aktif eder yaani kullanıcıyı oluşturmamıza yardımcı olur -->
+  </form>
+</div>
+
+{% endblock %}
